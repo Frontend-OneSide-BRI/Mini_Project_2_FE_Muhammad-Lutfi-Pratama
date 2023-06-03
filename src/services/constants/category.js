@@ -1,4 +1,4 @@
-import galleryImgData from "./img_gallery";
+import galleryImgData from "./img-gallery";
 
 const categoryCuratedData = [];
 galleryImgData
@@ -9,7 +9,7 @@ galleryImgData
     }
   });
 
-const categoryGallery = ["All"];
+const categoryGallery = ["all"];
 galleryImgData.forEach(item => {
   if (!categoryGallery.includes(item.category)) {
     categoryGallery.push(item.category);

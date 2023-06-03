@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function HomeLeading() {
+export default function HomeLeading({ inputValListener: onChangeListener }) {
   return (
     <div className="mb-8">
       <div className="mt-10 mb-6 text-center">
@@ -13,6 +13,7 @@ export default function HomeLeading() {
         <input
           type="search"
           class="peer cursor-pointer relative h-12 rounded-full border bg-transparent pl-12 outline-none w-full focus:cursor-text focus:border-yellow-800 focus:pl-16 focus:pr-4 transition-all ease-in-out shadow-md focus:shadow-none"
+          onChange={val => onChangeListener(val.target.value)}
         />
         <svg
           xmlns="http://www.w3.org/2000/svg"

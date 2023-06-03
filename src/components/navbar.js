@@ -1,24 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import logoGaLerry from "../assets/logo.png";
 
-export default function Navbar() {
+export default function Navbar({ activeMenu : menu, activeMenuListener }) {
+  let [activeMenu, setActiveMenu] = useState(menu);
+
+  const handleActiveMenuStyle = menu => {
+    if (menu === activeMenu) return "font-semibold text-lg";
+    return "opacity-70";
+  };
+
   return (
     <nav className="flex flex-col pb-2 shadow-md rounded-3xl justify-around mx-auto bg-[#fdf7f2ee] md:flex-row md:justify-between md:px-8 xl:container">
       <div className="w-auto h-8 mt-3 md:w-1/4 md:h-auto">
         <ul className="flex justify-around h-[100%] cursor-pointer md:items-center">
           <li
             className="w-1/4 text-center"
-            onClick={() => console.log("click")}
+            onClick={() => {
+              setActiveMenu("home");
+              activeMenuListener("home");
+            }}
           >
-            <p className="transition-all hover:font-semibold hover:text-lg">
+            <p
+              className={`transition-all hover:font-semibold hover:text-lg ${handleActiveMenuStyle(
+                "home"
+              )}`}
+            >
               Home
             </p>
           </li>
           <li
             className="w-1/4 text-center"
-            onClick={() => console.log("click")}
+            onClick={() => {
+              setActiveMenu("gallery");
+              activeMenuListener("gallery");
+            }}
           >
-            <p className="transition-all hover:font-semibold hover:text-lg">
+            <p
+              className={`transition-all hover:font-semibold hover:text-lg ${handleActiveMenuStyle(
+                "gallery"
+              )}`}
+            >
               Gallery
             </p>
           </li>
