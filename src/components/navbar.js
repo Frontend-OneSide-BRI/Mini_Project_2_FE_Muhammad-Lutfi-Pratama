@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import logoGaLerry from "../assets/logo.png";
+import { Link } from "react-router-dom";
 
-export default function Navbar({ activeMenu : menu, activeMenuListener }) {
-  let [activeMenu, setActiveMenu] = useState(menu);
-
+export default function Navbar({ activeMenu }) {
   const handleActiveMenuStyle = menu => {
     if (menu === activeMenu) return "font-semibold text-lg";
     return "opacity-70";
@@ -13,35 +12,25 @@ export default function Navbar({ activeMenu : menu, activeMenuListener }) {
     <nav className="flex flex-col pb-2 shadow-md rounded-3xl justify-around mx-auto bg-[#fdf7f2ee] md:flex-row md:justify-between md:px-8 xl:container">
       <div className="w-auto h-8 mt-3 md:w-1/4 md:h-auto">
         <ul className="flex justify-around h-[100%] cursor-pointer md:items-center">
-          <li
-            className="w-1/4 text-center"
-            onClick={() => {
-              setActiveMenu("home");
-              activeMenuListener("home");
-            }}
-          >
-            <p
+          <li className="w-1/4 text-center">
+            <Link
+              to="/"
               className={`transition-all hover:font-semibold hover:text-lg ${handleActiveMenuStyle(
                 "home"
               )}`}
             >
               Home
-            </p>
+            </Link>
           </li>
-          <li
-            className="w-1/4 text-center"
-            onClick={() => {
-              setActiveMenu("gallery");
-              activeMenuListener("gallery");
-            }}
-          >
-            <p
+          <li className="w-1/4 text-center" onClick={() => {}}>
+            <Link
+              to="/gallery"
               className={`transition-all hover:font-semibold hover:text-lg ${handleActiveMenuStyle(
                 "gallery"
               )}`}
             >
               Gallery
-            </p>
+            </Link>
           </li>
         </ul>
       </div>

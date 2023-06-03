@@ -28,14 +28,14 @@ function CuratedCategory({ inputValue }) {
       return (
         <div
           key={index}
-          className="cursor-pointer relative w-full h-[300px] overflow-hidden transition-all rounded-lg md:h-[400px] lg:h-[500px] hover:scale-105 shadow-xl hover:shadow-2xl"
+          className="group cursor-pointer relative w-full h-[300px] overflow-hidden rounded-lg md:h-[400px] lg:h-[500px] shadow-xl mb-6 hover:scale-105 transition-all"
         >
           <img
             src={img.urlImg}
             alt={img.title}
-            className="object-cover w-full h-full"
+            className="object-cover w-full h-full transition-all duration-500 group-hover:brightness-75 group-hover:bg-slate-200 filter group-hover:rotate-6 group-hover:scale-125"
           />
-          <p className="absolute text-lg font-semibold text-white left-4 bottom-4">
+          <p className="absolute w-3/4 px-8 py-2 text-xl font-semibold text-center text-white transition-all shadow-2xl opacity-0 bg-gray-600/50 rounded-xl left-14 sm:left-10 lg:left-8 bottom-12 group-hover:opacity-100">
             {img.title}
           </p>
         </div>
@@ -61,7 +61,7 @@ function CuratedCategory({ inputValue }) {
   };
 
   return (
-    <div className="pt-8">
+    <div className="pt-8 mb-8">
       <h2 className="text-3xl font-light text-center">Curated For You</h2>
       <div class="w-3/12 sm:w-2/12 md:w-1/12 h-[3px] mt-2 mx-auto rounded-full bg-yellow-700"></div>
       {/* Tab menu */}
@@ -69,7 +69,7 @@ function CuratedCategory({ inputValue }) {
         {renderCategoryTabs(categoryCuratedData)}
       </div>
       {/* Tab content */}
-      <div className="grid grid-cols-1 gap-4 px-4 mx-auto mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+      <div className="grid max-w-6xl grid-cols-1 gap-4 px-4 mx-auto mt-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {renderCuratedImg(filterImgData(curatedImgData))}
       </div>
     </div>
