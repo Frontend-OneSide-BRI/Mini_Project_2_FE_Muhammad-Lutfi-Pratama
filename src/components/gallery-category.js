@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { categoryGallery } from "../services/constants/category";
 import galleryImgData from "../services/constants/img-gallery";
+import ImgCard from "./img-card";
 
 function GalleryCategory({ searchInputValue }) {
   let [activeCategory, setActiveCategory] = useState(0);
@@ -24,6 +25,7 @@ function GalleryCategory({ searchInputValue }) {
 
   const renderCategoryTabs = categoryData => {
     return categoryData.map((category, index) => {
+      console.log("🚀 ~ category:", category);
       return (
         <button
           key={index}
@@ -56,21 +58,7 @@ function GalleryCategory({ searchInputValue }) {
     }
 
     return imgGallery.map((img, index) => {
-      return (
-        <div
-          key={index}
-          className="group cursor-pointer relative w-full h-[300px] overflow-hidden rounded-lg md:h-[400px] lg:h-[500px] shadow-xl mb-6 hover:scale-105 transition-all"
-        >
-          <img
-            src={img.urlImg}
-            alt={img.title}
-            className="object-cover w-full h-full transition-all duration-500 group-hover:brightness-75 group-hover:bg-slate-200 filter group-hover:rotate-6 group-hover:scale-125"
-          />
-          <p className="absolute w-3/4 px-8 py-2 text-xl font-semibold text-center text-white transition-all shadow-2xl opacity-0 bg-gray-600/50 rounded-xl left-14 sm:left-10 lg:left-8 bottom-12 group-hover:opacity-100">
-            {img.title}
-          </p>
-        </div>
-      );
+      return <ImgCard key={index} imgUrl={img.urlImg} title={img.title} />;
     });
   };
 

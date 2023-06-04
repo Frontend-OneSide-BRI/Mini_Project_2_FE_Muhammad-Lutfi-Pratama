@@ -12,7 +12,7 @@ export default function HomeLeading({ inputValListener: onChangeListener }) {
       <div class="relative mx-auto w-max md:w-1/2 xl:w-2/6">
         <input
           type="search"
-          class="peer cursor-pointer relative h-12 rounded-full border bg-transparent pl-12 outline-none w-full focus:cursor-text focus:border-yellow-800 focus:pl-16 focus:pr-4 transition-all ease-in-out shadow-md focus:shadow-none"
+          class="peer cursor-pointer relative h-12 rounded-full border bg-transparent pl-12 outline-none w-full focus:cursor-text focus:border-yellow-800 focus:pl-16 pr-4 focus:pr-4 transition-all ease-in-out shadow-md focus:shadow-none"
           onChange={val => onChangeListener(val.target.value)}
         />
         <svg
