@@ -2,9 +2,9 @@ import React from "react";
 
 function GalleryLeading({ inputValListener }) {
   return (
-    <section className="w-full md:rounded-xl md:w-11/12 mx-auto my-8 bg-bottom lg:bg-center bg-[url('https://images.unsplash.com/photo-1682686579688-c2ba945eda0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-gray-300 shadow-xl">
+    <section className="w-full md:rounded-xl md:w-11/12 mx-auto my-8 bg-bottom lg:bg-center bg-[url('https://images.unsplash.com/photo-1682686579688-c2ba945eda0e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80')] bg-fixed bg-cover bg-gray-300 shadow-xl">
       <div className="max-w-screen-xl px-4 py-24 mx-auto text-center lg:py-56">
-        <h1 className="mb-10 text-2xl font-semibold leading-none text-white">
+        <h1 className="mb-10 text-2xl font-semibold leading-none text-yellow-700">
           Boost your imagination
         </h1>
         <div className="max-w-xl mx-auto">

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { categoryGallery } from "../services/constants/category";
-import galleryImgData from "../services/constants/img-gallery";
-import ImgCard from "./img-card";
-import { NotFound } from "./not-found-img";
+import { categoryGallery } from "../../services/constants/category";
+import galleryImgData from "../../services/constants/img-gallery";
+import ImgCard from "../card-img/img-card";
+import { NotFound } from "../not-found/not-found-img";
 
 function GalleryCategory({ searchInputValue }) {
   let [activeCategory, setActiveCategory] = useState(0);

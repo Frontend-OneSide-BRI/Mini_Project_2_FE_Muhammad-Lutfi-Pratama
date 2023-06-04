@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
-import imgTopData from "../services/constants/img-top";
+import imgTopData from "../../services/constants/img-top";
 
 function Carousel({ isShow }) {
   let [currentSlide, setCurrentSlide] = useState(0);
@@ -47,7 +47,7 @@ function Carousel({ isShow }) {
             style={{
               backgroundImage: `url(${imgTopData[currentSlide].urlImg})`,
             }}
-            className="w-full h-full duration-500 bg-center bg-cover rounded-2xl"
+            className="w-full h-full duration-500 bg-fixed bg-center bg-cover rounded-2xl"
           ></div>
           {/* Left Arrow */}
           <div className="hidden group-hover:block hover:scale-110 transition-all absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 hover:bg-black/50 text-white cursor-pointer">

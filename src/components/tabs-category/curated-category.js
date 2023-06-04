@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { categoryCuratedData } from "../services/constants/category";
-import { curatedImgData } from "../services/constants/img-curated";
-import ImgCard from "./img-card";
+import { categoryCuratedData } from "../../services/constants/category";
+import { curatedImgData } from "../../services/constants/img-curated";
+import ImgCard from "../card-img/img-card";
 
 function CuratedCategory({ inputValue }) {
   let [activeCategory, setActiveCategory] = useState(0);
