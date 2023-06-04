@@ -23,9 +23,18 @@ The minimum requirements:
 
 ## Screenshots
 
-| ![space-1.jpg](./screenshots/home-page.png) |
-| :-----------------------------------------: |
-|                 _Home Page_                 |
+|    ![home-page.jpg](./screenshots/home-page.png)    |
+| :-------------------------------------------------: |
+|                     _Home Page_                     |
+| ![gallery-page.jpg](./screenshots/gallery-page.png) |
+|     :-----------------------------------------:     |
+|                   _Gallery Page_                    |
+|  ![detail-page.jpg](./screenshots/detail-page.png)  |
+|     :-----------------------------------------:     |
+|                    _Detail Page_                    |
+| ![card-page.jpg](./screenshots/modal-card-img.png)  |
+|     :-----------------------------------------:     |
+|                 _Modal Card Image_                  |
 
 # Getting Started with Create React App
 
