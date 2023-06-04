@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { categoryGallery } from "../services/constants/category";
 import galleryImgData from "../services/constants/img-gallery";
 import ImgCard from "./img-card";
+import { NotFound } from "./not-found-img";
 
 function GalleryCategory({ searchInputValue }) {
   let [activeCategory, setActiveCategory] = useState(0);
@@ -25,7 +26,6 @@ function GalleryCategory({ searchInputValue }) {
 
   const renderCategoryTabs = categoryData => {
     return categoryData.map((category, index) => {
-      console.log("🚀 ~ category:", category);
       return (
         <button
           key={index}
@@ -50,11 +50,17 @@ function GalleryCategory({ searchInputValue }) {
         return img.title.toLowerCase().includes(searchInputValue.toLowerCase());
       });
     }
+    if (imgGallery.length === 0) {
+      return NotFound.searchImg(searchInputValue);
+    }
 
     if (categoryGallery[activeCategory] !== "all") {
       imgGallery = imgGallery.filter(
         img => img.category === categoryGallery[activeCategory]
       );
+    }
+    if (imgGallery.length === 0) {
+      return NotFound.noImg();
     }
 
     return imgGallery.map((img, index) => {
@@ -73,7 +79,7 @@ function GalleryCategory({ searchInputValue }) {
       </div>
 
       {/* tab content */}
-      <div className="grid w-full max-w-5xl gap-2 p-5 mx-auto mt-4 mb-10 sm:gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 pb-18 columns-3">
+      <div className="relative grid w-full max-w-5xl gap-2 p-5 pb-32 mx-auto mt-4 mb-10 sm:gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 columns-3">
         {renderCategoryContent(galleryImgData)}
       </div>
     </div>
