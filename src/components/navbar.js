@@ -1,6 +1,7 @@
 import React from "react";
 import logoGaLerry from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import AuthButton from "./auth-button";
 
 export default function Navbar({ activeMenu }) {
   const handleActiveMenuStyle = menu => {
@@ -45,12 +46,8 @@ export default function Navbar({ activeMenu }) {
       </div>
 
       <div className="flex justify-center w-full gap-4 text-sm sm:text-base -order-2 md:order-none md:items-center md:w-1/4 ">
-        <button className="px-4 py-1 border-2 rounded-lg sm:py-2 border-yellow-950 hover:scale-105 ">
-          Sign Up
-        </button>
-        <button className="px-4 py-1 text-white transition-all bg-yellow-800 rounded-lg sm:py-2 hover:bg-yellow-900 hover:scale-105">
-          Sign In
-        </button>
+        <AuthButton buttonType={'signup'} textButton={'Sign Up'} />
+        <AuthButton buttonType={'signin'} textButton={'Sign In'} />
       </div>
 
       <span class="-order-1 mt-6 mx-auto h-0.5 rounded-full w-5/6 bg-gray-200 lg:w-1/3 md:hidden"></span>
